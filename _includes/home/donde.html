@@ -1,0 +1,17 @@
+<section class="block-donde block-left">
+   <div class="section-text">
+     <h2><span class="dash">-</span> Dónde <span class="dash">-</span></h2>
+     <ul class="locales">
+       {% for address in site.addresses %}
+         <li>
+           <p>{{ address.street }},<br>
+             {{ address.neighborhood }},<br>
+             {{ address.city }}.</p>
+         </li>
+       {% endfor %}
+     </ul>
+   </div>
+   <div class="map"></div>
+  <div class="block-decoration"></div>
+</section>
+

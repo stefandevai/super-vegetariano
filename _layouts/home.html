@@ -4,11 +4,17 @@
   {% include head.html %}
 
   <body>
+    {% include navbar.html %}
+    {% include home/hero.html %}
 
     <main class="main" aria-label="Content">
-      {{ content }}
+      {% include home/historia.html %}
+      {% include home/especialidades.html %}
+      {% include home/donde.html %}
+      {% include home/contacto.html %}
     </main>
 
+    {% include footer.html %}
     {% include google-analytics-tag.html %}
   </body>
 
