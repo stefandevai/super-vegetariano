@@ -1,9 +1,18 @@
 <section class="contact">
   <h2>- Envía tu mensaje -</h2>
   <form action="">
-    <input type="text" name="name" placeholder="Nombre..." maxlength="64" required>
-    <input type="email" name="email" placeholder="Email..." maxlength="64" required>
-    <textarea name="message" placeholder="Mensaje..." maxlength="3000" required></textarea>
+    <div class="name-input">
+      <label for="name">¿Quién eres?</label>
+      <input type="text" name="name" placeholder="Aureliano Buendía" maxlength="64" required>
+    </div>
+    <div class="email-input">
+      <label for="email">¿Cómo te contestamos?</label>
+      <input type="email" name="email" placeholder="nombre@ejemplo.com.mx" maxlength="64" required>
+    </div>
+    <div class="message-input">
+      <label for="message">¿Qué nos cuentas?</label>
+      <textarea name="message" placeholder="Escribe aquí tu mensaje..." maxlength="3000" required></textarea>
+    </div>
     <input type="submit" value="Enviar">
   </form>
 </section>
