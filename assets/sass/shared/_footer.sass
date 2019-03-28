@@ -11,6 +11,25 @@ footer
     align-items: center
     justify-content: space-evenly
 
+    svg
+      width: 32px
+      height: 32px
+      margin-left: $pixel-unit*3
+
+    circle,a.facebook > path
+      fill: $white
+      transition: fill .2s
+
+    a.facebook:hover > path
+      fill: $brand-light
+
+    a
+      width: 10px
+      height: 10px
+      text-decoration: none
+      &:hover circle
+        fill: $brand-light
+
     ul
       list-style: none
 
@@ -24,11 +43,19 @@ footer
     display: flex
     justify-content: space-between
 
-    img
-      margin-left: 4rem
+    padding-right: 4rem
+    padding-left: 4rem
+    display: flex
+    justify-content: space-between
+    align-items: center
 
-    div.text-footer
-      margin-right: 4rem
+    h4
+      text-transform: uppercase
+      color: $brand-dark
+      font-size: $font-size-footer
+    p
+      color: $primary
+      font-size: $font-size-footer
 
   .footer-third-section
     background-color: $black
