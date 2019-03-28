@@ -1,14 +1,25 @@
 <section class="block-especialidades block-right block-main">
-   <div class="section-media">
-     <div class="speciality-picture"></div>
-   </div>
-   <div class="section-text">
-     <h2><span class="dash">-</span> Especialidades <span class="dash">-</span></h2>
-     <div class="speciality-text">
-       <h3>Hamburguesa Vegetariana</h3>
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-     </div>
-     <nav class="speciality-navigation"></nav>
-   </div>
+   {% comment %}<div class="section-media">{% endcomment %}
+     {% comment %}<div class="speciality-picture">{% endcomment %}
+       {% comment %}<img src="assets/images/hamburguesa.jpg" alt="Ham">{% endcomment %}
+     {% comment %}</div>{% endcomment %}
+     {% comment %}<div class="speciality-picture">{% endcomment %}
+       {% comment %}<img src="assets/images/restauran_centro.jpg" alt="Ham">{% endcomment %}
+     {% comment %}</div>{% endcomment %}
+   {% comment %}</div>{% endcomment %}
+
+  <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 2000, "lazyLoad": true }'>
+    <img data-flickity-lazyload="assets/images/hamburguesa.jpg" alt="Ham">
+    <img data-flickity-lazyload="assets/images/restauran_centro.jpg" alt="Ham">
+  </div>
+    
+  <div class="section-text">
+    <h2><span class="dash">-</span> Especialidades <span class="dash">-</span></h2>
+    <div class="speciality-text">
+      <h3>Hamburguesa Vegetariana</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <nav class="speciality-navigation"></nav>
+  </div>
 </section>
 
