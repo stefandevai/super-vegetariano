@@ -1,0 +1,23 @@
+section.block-main
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 500px
+
+  overflow: hidden
+
+  h3
+    text-transform: uppercase
+
+  &:first-child
+    margin-top: $pixel-unit*7
+  &:last-child
+    margin-bottom: $pixel-unit*7
+
+  &.block-left
+    text-align: right
+
+  &.block-right
+    text-align: left
+
+  .section-text
+    margin: auto 3rem
