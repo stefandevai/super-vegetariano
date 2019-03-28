@@ -1,17 +1,47 @@
+section.contact > div.triangle
+  width: 0
+  height: 0
+  margin: 0 auto
+  border-color: $black transparent
+  border-style: solid
+  border-width: 30px 50px 0 50px
+  filter: blur(5px)
+  z-index: 1
+
+section.contact::before
+  content: ''
+  position: absolute
+  width: 0
+  height: 0
+  left: 0
+  right: 0
+  margin: 0 auto
+  border-color: $white transparent
+  border-style: solid
+  border-width: 30px 50px 0 50px
+  z-index: 2
+
 section.contact
   background-color: $primary
   background: url("../images/fruit_bg.jpg")
   background-attachment: fixed
+  overflow: hidden
+
+  -webkit-box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
+  -moz-box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
+  box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
 
   height: 100vh
   text-align: center
 
   display: flex
   flex-direction: column
-  justify-content: space-evenly
+  justify-content: space-between
 
   h2
     color: $white
+    margin-bottom: 0
+    margin-top: 0
 
   form
     height: 500px
@@ -22,7 +52,7 @@ section.contact
     grid-template-rows: 80px 4fr 100px
     grid-column-gap: $pixel-unit
     grid-row-gap: $pixel-unit
-    grid-template-areas: ". n e ." ". m m ." ". . b ."
+    grid-template-areas: ". n e ." ". m m ." ". b b ."
 
     .name-input,.email-input,.message-input
       padding: 0
@@ -38,10 +68,18 @@ section.contact
 
     .name-input
       grid-area: n
+      > label::before
+        content: 'person'
+        
     .email-input
       grid-area: e
+      > label::before
+        content: 'email'
+
     .message-input
       grid-area: m
+      > label::before
+        content: 'comment'
 
   label
     color: $white
@@ -51,6 +89,19 @@ section.contact
     transition: color .3s
     transition: text-shadow .5s
 
+    &::before
+      font-family: 'Material Icons'
+      font-size: $font-size-p
+      font-weight: normal
+      font-style: normal
+      line-height: 1
+      text-transform: none
+      letter-spacing: normal
+      word-wrap: normal
+      white-space: nowrap
+      direction: ltr
+      vertical-align: bottom
+      margin-right: $pixel-unit
 
   input[type="text"],input[type="email"],textarea
     border: 2px solid $white
@@ -83,36 +134,38 @@ section.contact
         border-color: $brand-light
         & ~ label
           color: $brand-light
+          &::before
+            content: 'done'
 
     &:not(:placeholder-shown)
       &:invalid
         border-color: $warning
         & ~ label
           color: $warning
-
-    //&:required
-      //border-color: $white
+          &::before
+            content: 'close'
 
   input
     height: 3rem
     background-position: right center
+
 
   input[type="text"],input[type="email"]
     padding: 0 $pixel-unit*2
 
   input[type="submit"]
     grid-area: b
-    justify-self: end
+    justify-self: stretch
+    align-self: center
     border: none
     border-radius: 5px
-    background-color: $brand
-    color: $white
-    width: 8rem
-    float: right
+    background-color: transparent
+    color: $brand-light
+    border: 5px solid $brand-light
     cursor: pointer
     font-weight: bold
     text-transform: uppercase
-    letter-spacing: 3px
+    letter-spacing: 1px
     text-align: center
     transition: all .2s
 
@@ -124,7 +177,8 @@ section.contact
       box-shadow: 3px 3px 3px 0px $dark
 
     &:active
-      background-color: $brand
+      background-color: $brand-dark
+      border-color: $brand-dark
 
     &:focus
       outline: none
