@@ -36,17 +36,21 @@ section.hero
 
   @-webkit-keyframes arrow
     from
-      padding-bottom: $pixel-unit
-      padding-top: 0
+      -webkit-transform: translate(0, 0) /* Safari */
+      //padding-bottom: $pixel-unit
+      //padding-top: 0
     to
-      padding-bottom: 0
-      padding-top: 30px
+      -webkit-transform: translate(0, $pixel-unit) /* Safari */
+      //padding-bottom: 0
+      //padding-top: 30px
 
   @keyframes arrow
     from
-      padding-bottom: $pixel-unit
-      padding-top: 0
+      transform: translate(0, 0)
+      //padding-bottom: $pixel-unit
+      //padding-top: 0
     to
-      padding-bottom: 0
-      padding-top: 30px
+      transform: translate(0, $pixel-unit)
+      //padding-bottom: 0
+      //padding-top: 30px
 
