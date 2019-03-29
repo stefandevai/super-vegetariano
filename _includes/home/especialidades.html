@@ -1,16 +1,16 @@
 <section class="block-especialidades block-right block-main">
-   {% comment %}<div class="section-media">{% endcomment %}
-     {% comment %}<div class="speciality-picture">{% endcomment %}
-       {% comment %}<img src="assets/images/hamburguesa.jpg" alt="Ham">{% endcomment %}
-     {% comment %}</div>{% endcomment %}
-     {% comment %}<div class="speciality-picture">{% endcomment %}
-       {% comment %}<img src="assets/images/restauran_centro.jpg" alt="Ham">{% endcomment %}
-     {% comment %}</div>{% endcomment %}
-   {% comment %}</div>{% endcomment %}
+  {% comment %}<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 4000, "lazyLoad": 1 }'>{% endcomment %}
+    {% comment %}<img data-flickity-lazyload="assets/images/hamburguesa.jpg" alt="Ham">{% endcomment %}
+    {% comment %}<img data-flickity-lazyload="assets/images/restauran_centro.jpg" alt="Ham">{% endcomment %}
+  {% comment %}</div>{% endcomment %}
 
-  <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 2000, "lazyLoad": true }'>
-    <img data-flickity-lazyload="assets/images/hamburguesa.jpg" alt="Ham">
-    <img data-flickity-lazyload="assets/images/restauran_centro.jpg" alt="Ham">
+  <div id="fotos-especialidades">
+    <img class="tns-lazy-img" src="assets/images/hamburguesa.jpg" data-src="assets/images/hamburguesa.jpg" alt="Ham">
+    <img class="tns-lazy-img" src="assets/images/restauran_centro.jpg" data-src="assets/images/restauran_centro.jpg" alt="Ham">
+    <img class="tns-lazy-img" src="assets/images/hamburguesa.jpg" data-src="assets/images/hamburguesa.jpg" alt="Ham">
+    <img class="tns-lazy-img" src="assets/images/hamburguesa.jpg" data-src="assets/images/hamburguesa.jpg" alt="Ham">
+    <img class="tns-lazy-img" src="assets/images/restauran_centro.jpg" data-src="assets/images/restauran_centro.jpg" alt="Ham">
+    <img class="tns-lazy-img" src="assets/images/hamburguesa.jpg" data-src="assets/images/hamburguesa.jpg" alt="Ham">
   </div>
     
   <div class="section-text">
@@ -19,7 +19,14 @@
       <h3>Hamburguesa Vegetariana</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <nav class="speciality-navigation"></nav>
+    <nav id="speciality-navigation">
+      <div>0</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </nav>
   </div>
 </section>
 
