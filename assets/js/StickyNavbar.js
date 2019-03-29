@@ -1,8 +1,14 @@
 class StickyNavbar {
-  constructor() {
+  constructor(height) {
+    this.height = height;
+    this._manageNavbar();
+  }
+
+  _manageNavbar() {
     let scroll = 0;
-    const stickyTrigger = document.getElementsByClassName("sticky-menu-trigger")[0].offsetTop;
+    const stickyTrigger = document.getElementsByClassName("sticky-menu-trigger")[0].offsetTop - this.height;
     let stickyNav = document.getElementById("sticky-navbar");
+
     window.onscroll = () => {
       if (window.pageYOffset <= 0) {
         stickyNav.style.opacity = "0";
@@ -15,13 +21,13 @@ class StickyNavbar {
         stickyNav.style.top = "0";
       }
       else {
-        stickyNav.style.top = "-73px";
+        stickyNav.style.top = "-" + this.height.toString()  + "px";
       }
     }
+
   }
 
-  smoothScroll(eid) {
-    console.log(eid);
+  scroll(eid) {
     const el = document.getElementById(eid);
     if (eid === 'top') {
       window.scroll({
@@ -39,5 +45,3 @@ class StickyNavbar {
     }
   }
 }
-  
-let navHome = new StickyNavbar;
