@@ -1,18 +1,15 @@
-nav.top-menu
-  top: $pixel-unit*2
+nav.top-menu,nav.fixed-menu
   left: 0
   right: 0
   margin: 0 auto
-  width: 90%
   position: absolute
 
   display: flex
   align-items: center
   justify-content: space-between
+  z-index: 2
 
   img
-    width: 70px
-    height: 70px
     -webkit-transition: transform .5s
     transition: transform .5s
 
@@ -22,10 +19,12 @@ nav.top-menu
 
   ul
     list-style: none
+    text-transform: uppercase
+    font-size: $font-size-footer
 
     li
       display: inline
-      margin-left: $pixel-unit
+      margin-left: $pixel-unit*2
 
       a
         color: $white
@@ -34,3 +33,27 @@ nav.top-menu
 
         &:hover
           color: $brand
+
+nav.top-menu
+  top: $pixel-unit*2
+  width: 90%
+
+  img
+    width: 70px
+    height: 70px
+
+nav.fixed-menu
+  display: none
+  padding-left: $pixel-unit*2
+  padding-right: $pixel-unit*2
+  background-color: $black
+  height: 8vh
+  position: fixed
+  top: 0
+  border-top: 13px solid $white
+  border-left: 13px solid $white
+  border-right: 13px solid $white
+
+  img
+    width: 50px
+    height: 50px

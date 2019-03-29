@@ -1,14 +1,76 @@
-@import 'https://unpkg.com/flickity@2/dist/flickity.min.css'
-
 section.block-especialidades
-  div.section-media
-    background-color: $primary
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(3, calc(100vh/3))
+  grid-template-areas: "p p d d" "p p d d" "s l d d" 
 
-  //img
-    //overflow: hidden
-    //min-width: 100%
-    //height: 1% !important
+  div.section-text
+    grid-area: d
 
-  .tns-lazy-img
-    opacity: 1 !important
+  img
+    height: 100%
+    width: auto
+
+  div.foto-especialidad
+    position: relative
+
+    &:hover > div.title-wrapper
+      opacity: 1
+
+    div.title-wrapper
+      cursor: pointer
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      opacity: 0
+      position: absolute
+      z-index: 2
+      transition: opacity .3s
+      h3
+        font-size: 1.5rem
+        margin-left: 15%
+        margin-right: 15%
+        letter-spacing: 4px
+        line-height: 1.8
+        color: white
+
+  div.primary
+    grid-area: p
+    overflow: hidden
+    border-bottom: 13px solid $white
+
+  div.secondary
+    grid-area: s
+    overflow: hidden
+    border-right: 7px solid $white
+
+    img
+      width: 100%
+      height: auto
+      transition: all .4s
+
+    &:hover > img
+      -webkit-filter: brightness(30%)
+      filter: brightness(30%)
+      transform: scale(1.2)
+
+  div.last
+    grid-area: l
+    overflow: hidden
+    border-left: 6px solid $white
+
+    img
+      cursor: pointer
+      transition: all .4s
+
+    &:hover > img
+      -webkit-filter: brightness(40%)
+      filter: brightness(40%)
+      transform: scale(1.2)
+
+
+
 
