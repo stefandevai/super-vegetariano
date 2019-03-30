@@ -5,7 +5,8 @@
 <script>
   let navHome = new StickyNavbar(73);
 
-  applyParallax(['hero-bg'], 0.1);
+  {% comment %}applyParallax(['hero-bg'], 0.1);{% endcomment %}
+  applyParallax(['hero-bg', 'hero-arrow'], 0.1);
 
   AOS.init();
 </script>

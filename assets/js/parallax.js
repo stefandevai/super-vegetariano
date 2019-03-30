@@ -1,14 +1,15 @@
 let applyParallax = (function(eids, strength) {
+  let scrollPos = 0;
   window.addEventListener('scroll', (e) => {
     let ms = strength;
 
     eids.forEach((eid) => {
       const el = document.getElementById(eid);
-      const offset = this.pageYOffset - el.offsetTop;
-      //console.log(offset);
-      let delta = offset * ms;
-      el.style.top = delta + 'px';
-      ms *= 0.6;
+      let delta = window.pageYOffset;
+      //console.log(delta);
+      //el.style.top = el.offsetTop - window.pageYOffset * ms + 'px';
+      el.style.transform = "translateY(" + -window.pageYOffset*ms + "px)";
+      ms *= 0.3;
     });
   });
 });

@@ -1,9 +1,9 @@
 <section id="donde" class="block-donde block-left block-main">
-   <div class="section-text" data-aos="zoom-out">
-     <h2><span class="dash">-</span> Dónde <span class="dash">-</span></h2>
+   <div class="section-text">
+     <h2 data-aos="fade-up"><span class="dash">-</span> Dónde <span class="dash">-</span></h2>
      <ul class="locales">
        {% for address in site.addresses %}
-         <li>
+         <li data-aos="fade-left">
            <p>{{ address.street }},<br>
              {{ address.neighborhood }},<br>
              {{ address.city }}.</p>
