@@ -14,9 +14,7 @@ section.hero
     padding: 0
 
   .hero-wrapper
-    position: absolute
-    left: 0
-    right: 0
+    position: relative
 
   > div
     height: 45vh
@@ -28,6 +26,10 @@ section.hero
 
   img
     height: 8rem
+
+  div#hero-arrow
+    position: absolute
+    top: 80vh
 
   svg
     pointer-events: bounding-box
@@ -49,22 +51,18 @@ section.hero
       stroke: $white
 
   @-webkit-keyframes arrow
-    from
+    0%
       -webkit-transform: translate(0, 0) /* Safari */
-      //padding-bottom: $pixel-unit
-      //padding-top: 0
-    to
+    30%
       -webkit-transform: translate(0, $pixel-unit) /* Safari */
-      //padding-bottom: 0
-      //padding-top: 30px
+    100%
+      -webkit-transform: translate(0, 0) /* Safari */
 
   @keyframes arrow
-    from
+    0%
       transform: translate(0, 0)
-      //padding-bottom: $pixel-unit
-      //padding-top: 0
-    to
+    30%
       transform: translate(0, $pixel-unit)
-      //padding-bottom: 0
-      //padding-top: 30px
+    100%
+      transform: translate(0, 0)
 

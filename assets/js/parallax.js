@@ -1,11 +1,13 @@
 let applyParallax = (function(eids, strength) {
   window.addEventListener('scroll', (e) => {
-    const offset = window.pageYOffset;
-    strength = 0.1;
     let ms = strength;
+
     eids.forEach((eid) => {
       const el = document.getElementById(eid);
-      el.style.top = (offset * ms) + 'px';
+      const offset = this.pageYOffset - el.offsetTop;
+      //console.log(offset);
+      let delta = offset * ms;
+      el.style.top = delta + 'px';
       ms *= 0.6;
     });
   });
