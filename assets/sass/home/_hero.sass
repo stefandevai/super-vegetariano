@@ -1,5 +1,6 @@
 section.hero
-  height: 100vh
+  min-height: 700px
+  height: 110vh
   position: relative
 
   .hero-bg
@@ -15,21 +16,30 @@ section.hero
 
   .hero-wrapper
     position: relative
+    text-align: center
 
-  > div
-    height: 45vh
-    padding-top: 35vh
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
+  //> div
+    //height: 45vh
+    //padding-top: 35vh
+    //display: flex
+    //flex-direction: column
+    //justify-content: space-between
+    //align-items: center
 
   img
-    height: 8rem
+    position: absolute
+    //top: 10rem
+    top: 35vh
+    margin: 0 auto
+    left: 0
+    right: 0
 
   div#hero-arrow
     position: absolute
-    top: 29rem
+    //top: 29rem
+    top: 75vh
+    left: 0
+    right: 0
 
   svg
     pointer-events: bounding-box

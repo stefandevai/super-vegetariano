@@ -1,4 +1,4 @@
-section.contact > div.triangle
+div.triangle
   width: 0
   height: 0
   margin: 0 auto
@@ -7,9 +7,23 @@ section.contact > div.triangle
   border-width: 30px 50px 0 50px
   filter: blur(5px)
   z-index: 1
+  position: absolute
+  left: 0
+  right: 0
 
-section.contact::before
+div.triangle-shadow::before
   content: ''
+  position: absolute
+  width: 100px
+  height: 100px
+  background-color: $white
+  top: -130px
+  left: -50px
+  right: 0
+  margin: 0 auto
+  z-index: 2
+
+div.triangle-shadow
   position: absolute
   width: 0
   height: 0
@@ -31,20 +45,22 @@ section.contact
   -moz-box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
   box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
 
+  min-height: 500px
   height: 100vh
   text-align: center
 
   display: flex
   flex-direction: column
-  justify-content: space-between
+  justify-content: center
 
   h2
     color: $white
-    margin-bottom: 0
-    margin-top: 0
+    margin-bottom: $pixel-unit*2
+    margin-top: $pixel-unit*3
 
   form
-    height: 500px
+    min-height: 300px
+    height: 70vh
     width: 70%
     margin: 0 auto
     display: grid
@@ -188,4 +204,5 @@ section.contact
     resize: none
     padding: $pixel-unit $pixel-unit*2
     background-position: $pixel-unit*2 $pixel-unit
+    min-height: 3rem
     height: 100%
