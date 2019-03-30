@@ -1,9 +1,22 @@
 section.hero
-  background: url('../images/hero_bg.jpg')
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: 0% 100%
-  height: 110vh
+  height: 100vh
+  position: relative
+
+  .hero-bg
+    position: absolute
+    background: url('../images/hero_bg.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 0% 100%
+    min-width: 100%
+    height: 100%
+    z-index: -3
+    padding: 0
+
+  .hero-wrapper
+    position: absolute
+    left: 0
+    right: 0
 
   > div
     height: 45vh
