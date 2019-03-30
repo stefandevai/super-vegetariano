@@ -1,21 +1,19 @@
 <nav class="top-menu">
-  <img src="assets/images/svg/logo.svg" alt="Super Vegetariano reduced logo" onclick="navHome.scroll('top')">
+  <img src="assets/images/svg/logo.svg" alt="Super Vegetariano reduced logo" onclick="navHome.scrollTo('top')">
   <ul>
-    <li class="nav-item" onclick="navHome.scroll('historia')">Historia</li>
-    <li class="nav-item" onclick="navHome.scroll('especialidades')">Especialidades</li>
-    <li class="nav-item" onclick="navHome.scroll('donde')">¿Dónde?</li>
-    <li class="nav-item" onclick="navHome.scroll('contacto')">Contacto</li>
-    {% comment %}<li><a href="#">Novedades</a></li>{% endcomment %}
+    <li data-target="historia" class="nav-item" >Historia</li>
+    <li data-target="especialidades" class="nav-item" >Especialidades</li>
+    <li data-target="donde" class="nav-item" >¿Dónde?</li>
+    <li data-target="contacto" class="nav-item" >Contacto</li>
   </ul>
 </nav>
 
 <nav id="sticky-navbar" class="fixed-menu">
-  <img src="assets/images/svg/logo.svg" alt="Super Vegetariano reduced logo" onclick="navHome.scroll('top')">
+  <img src="assets/images/svg/logo.svg" alt="Super Vegetariano reduced logo" onclick="navHome.scrollTo('top')">
   <ul>
-    <li id="nav-item-historia" class="nav-item" onclick="navHome.scroll('historia')">Historia</li>
-    <li id="nav-item-especialidades" class="nav-item" onclick="navHome.scroll('especialidades')">Especialidades</li>
-    <li id="nav-item-donde" class="nav-item" onclick="navHome.scroll('donde')">¿Dónde?</li>
-    <li id="nav-item-contacto" class="nav-item" onclick="navHome.scroll('contacto')">Contacto</li>
-    {% comment %}<li><a href="#">Novedades</a></li>{% endcomment %}
+    <li data-target="historia" class="nav-item" >Historia</li>
+    <li data-target="especialidades" class="nav-item" >Especialidades</li>
+    <li data-target="donde" class="nav-item" >¿Dónde?</li>
+    <li data-target="contacto" class="nav-item" >Contacto</li>
   </ul>
 </nav>
