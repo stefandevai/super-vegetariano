@@ -1,11 +1,14 @@
 section.block-especialidades
   display: grid
-  grid-template-columns: repeat(4, 1fr)
-  grid-template-rows: repeat(3, calc(100vh/3))
-  grid-template-areas: "p p d d" "p p d d" "s l d d" 
+  grid-template-columns: repeat(2, 1fr)
 
-  div.section-text
-    grid-area: d
+  div.image-mosaic
+    overflow: hidden
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(3, calc((100vh - #{$navbar-height})/3))
+    grid-column-gap: 13px
+    grid-row-gap: 13px
 
   img
     height: 100%
@@ -13,6 +16,17 @@ section.block-especialidades
 
   div.foto-especialidad
     position: relative
+    overflow: hidden
+
+    img
+      width: 100%
+      height: auto
+      transition: all .4s
+
+    &:hover > img
+      -webkit-filter: brightness(30%)
+      filter: brightness(30%)
+      transform: scale(1.1)
 
     &:hover > div.title-wrapper
       opacity: 1
@@ -36,41 +50,4 @@ section.block-especialidades
         letter-spacing: 4px
         line-height: 1.8
         color: white
-
-  div.primary
-    grid-area: p
-    overflow: hidden
-    border-bottom: 13px solid $white
-
-  div.secondary
-    grid-area: s
-    overflow: hidden
-    border-right: 7px solid $white
-
-    img
-      width: 100%
-      height: auto
-      transition: all .4s
-
-    &:hover > img
-      -webkit-filter: brightness(30%)
-      filter: brightness(30%)
-      transform: scale(1.2)
-
-  div.last
-    grid-area: l
-    overflow: hidden
-    border-left: 6px solid $white
-
-    img
-      cursor: pointer
-      transition: all .4s
-
-    &:hover > img
-      -webkit-filter: brightness(40%)
-      filter: brightness(40%)
-      transform: scale(1.2)
-
-
-
 

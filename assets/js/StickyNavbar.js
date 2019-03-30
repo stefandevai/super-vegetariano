@@ -1,3 +1,5 @@
+"use strict";
+
 class StickyNavbar {
   constructor(height) {
     this.height = height;
@@ -8,7 +10,12 @@ class StickyNavbar {
     this.stickyTrigger = document.getElementsByClassName("sticky-menu-trigger")[0].offsetTop - this.height;
     this.stickyNav = document.getElementById("sticky-navbar");
 
-    this._manageNavbar();
+    if (this.stickyNav != null) {
+      this._manageNavbar();
+    }
+    else {
+      console.log("StickyNavbar not defined. Add 'sticky-navbar' to a element.");
+    }
   }
 
   _manageNavbar() {
@@ -20,6 +27,7 @@ class StickyNavbar {
     }
   }
 
+  // TODO Avoid changing style on every loop
   _toggleNavbar() {
     if (window.pageYOffset <= 0) {
       this.stickyNav.style.opacity = "0";
@@ -30,20 +38,27 @@ class StickyNavbar {
 
     if (window.pageYOffset >= this.stickyTrigger) {
       this.stickyNav.style.top = "0";
+      this.stickyNav.style.opacity = "1";
     }
     else {
       this.stickyNav.style.top = "-" + this.height.toString()  + "px";
+      this.stickyNav.style.opacity = "0";
     }
   }
 
   _prepareHighlight() {
     let navItems = document.getElementsByClassName("nav-item");
+    const self = this;
+
     [...navItems].forEach((item) => {
       let target = item.dataset.target;
       this.breakpoints[target] = document.getElementById(target).offsetTop - window.innerHeight / 2;
       this.itemsElements[target] = item;
 
-      item.addEventListener("click", this.scroll, false);
+      item.addEventListener("click", function() {
+        self._scrollFromClick(this);
+      }, false);
+
     });
     this.breakpoints['end'] = document.body.offsetHeight;
   }
@@ -64,26 +79,12 @@ class StickyNavbar {
     }
   }
 
-  scroll() {
-    const eid = this.dataset.target;
-    const el = document.getElementById(eid);
-    if (eid === 'top') {
-      window.scroll({
-        behavior: 'smooth',
-        left: 0,
-        top: 0
-      });
-    }
-    else {
-      window.scroll({
-        behavior: 'smooth',
-        left: 0,
-        top: el.offsetTop
-      });
-    }
+  _scrollFromClick(clickable) {
+    const eid = clickable.dataset.target;
+    this.scrollToElement(eid);
   }
 
-  scrollTo(eid) {
+  scrollToElement(eid) {
     const el = document.getElementById(eid);
     if (eid === 'top') {
       window.scroll({
@@ -96,8 +97,9 @@ class StickyNavbar {
       window.scroll({
         behavior: 'smooth',
         left: 0,
-        top: el.offsetTop
+        top: el.offsetTop - this.height
       });
     }
   }
 }
+
