@@ -4,6 +4,11 @@ section.block-especialidades
 
   div.image-mosaic
     overflow: hidden
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, calc((100vh - #{$navbar-height})/2))
+    grid-column-gap: 13px
+    grid-row-gap: 13px
 
   .primary
     -webkit-transform: scale(2)
@@ -18,9 +23,9 @@ section.block-especialidades
     position: relative
     overflow: hidden
     transition: all .3s
-    width: 50%
-    height: 50%
-    float: left
+    //width: 50%
+    //height: 50%
+    //float: left
 
     img
       width: 100%
