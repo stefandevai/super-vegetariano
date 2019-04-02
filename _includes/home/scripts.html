@@ -1,6 +1,7 @@
 <script src="assets/js/StickyNavbar.js"></script>
 <script src="assets/js/parallax.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 
 <script src="assets/js/especialidades.js"></script>
 
@@ -10,6 +11,8 @@
   applyParallax(['hero-bg', 'hero-arrow'], 0.1);
 
   AOS.init();
+
+  let mymap = L.map('map').setView([51.505, -0.09], 13);
 </script>
 
 {% include google-analytics-tag.html %}

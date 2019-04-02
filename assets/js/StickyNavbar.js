@@ -1,5 +1,13 @@
 "use strict";
 
+const requestAnimFrame = (function(){
+  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
+})();
+
+const browserSupportsSmoothScroll = () => {
+  return document.createElement('div').style.scrollBehavior !== undefined;
+}
+
 class StickyNavbar {
   constructor(height) {
     this.height = height;
@@ -9,6 +17,9 @@ class StickyNavbar {
 
     this.stickyTrigger = document.getElementsByClassName("sticky-menu-trigger")[0].offsetTop - this.height;
     this.stickyNav = document.getElementById("sticky-navbar");
+
+    if (browserSupportsSmoothScroll()) this.scrollToElement = this._scrollToElementBrowserSupport;
+    else this.scrollToElement = this._scrollToElementSmooth;
 
     if (this.stickyNav != null) {
       this._manageNavbar();
@@ -80,26 +91,57 @@ class StickyNavbar {
   }
 
   _scrollFromClick(clickable) {
-    const eid = clickable.dataset.target;
+    const eid = document.getElementById(clickable.dataset.target);
     this.scrollToElement(eid);
   }
 
-  scrollToElement(eid) {
+  // From https://gist.github.com/andjosh/6764939
+  // and https://gist.github.com/felipenmoura/650e7e1292c1e7638bcf6c9f9aeb9dd5
+  _scrollToElementSmooth(to, top=-1, duration=1000) {
+    const easeInOutCubic = function (t, b, c, d) {
+      t /= d/2;
+      if (t < 1) return c/2*t*t*t + b;
+      t -= 2;
+      return c/2*(t*t*t + 2) + b;
+    };
+
+    return new Promise((resolve, reject) => {
+      const element = document.scrollingElement;
+      if (top != -1) to = top;
+      else to = to.getBoundingClientRect().top + element.scrollTop - this.height;
+
+
+      let start = element.scrollTop, change = to - start, currentTime = 0, increment = 20;
+      const animateScroll = function() {
+          currentTime += increment;
+          let val = easeInOutCubic(currentTime, start, change, duration);
+          element.scrollTop = val;
+          if(currentTime < duration) {
+              requestAnimFrame(animateScroll);
+          } else {
+            resolve();
+          }
+      };
+      animateScroll();
+    });
+  }
+
+  _scrollToElementBrowserSupport(el, top=-1) {
+    if (top == -1) top = el.offsetTop - this.height;
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: top
+    });
+  }
+
+  scrollToId(eid) {
     const el = document.getElementById(eid);
-    if (eid === 'top') {
-      window.scroll({
-        behavior: 'smooth',
-        left: 0,
-        top: 0
-      });
-    }
-    else {
-      window.scroll({
-        behavior: 'smooth',
-        left: 0,
-        top: el.offsetTop - this.height
-      });
-    }
+    this.scrollToElement(el);
+  }
+
+  scrollToY(y) {
+    this.scrollToElement(undefined, y);
   }
 }
 
