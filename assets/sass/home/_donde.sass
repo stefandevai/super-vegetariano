@@ -37,3 +37,34 @@ section.block-donde
 
   div.map
     z-index: 1
+
+    .leaflet-popup-content
+      > div
+        width: 100%
+        height: 100%
+        img
+          width: 100%
+      a
+        font-size: 0.8rem
+        font-weight: light
+        line-height: 2rem
+        color: $brand-dark
+
+        &:hover
+          text-decoration: none !important
+
+        &::before
+          font-family: 'Material Icons'
+          font-weight: normal
+          letter-spacing: normal
+          word-wrap: normal
+          white-space: nowrap
+          direction: ltr
+          vertical-align: bottom
+          margin-right: $pixel-unit/2
+          content: 'map'
+
+      h3
+        font-size: 0.9rem
+        color: $dark
+        text-transform: none
