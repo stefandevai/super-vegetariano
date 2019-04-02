@@ -2,8 +2,9 @@
 
 (function(){
   const grid = document.getElementById("image-mosaic");
+  const defDesc = document.getElementById("default-description");
+  const imgs = document.getElementsByClassName("foto-especialidad");
 
-  let imgs = document.getElementsByClassName("foto-especialidad");
   [...imgs].forEach((img) => {
     img.addEventListener("click", function() { 
       if (this.classList.contains("primary")) {
@@ -12,8 +13,7 @@
         grid.style.gridColumnGap = "13px";
         grid.style.gridRowGap = "13px";
 
-        let others = document.getElementsByClassName("foto-especialidad");
-        [...others].forEach((other) => {
+        [...imgs].forEach((other) => {
           if (other != this) {
             other.style.opacity = "1";
           }
@@ -21,12 +21,13 @@
 
         // Description
         const descId = this.dataset.description;
-        let desc = document.getElementById(descId);
+        const desc = document.getElementById(descId);
         desc.classList.add("hide-description");
         desc.style.opacity = "0";
-        let defDesc = document.getElementById("default-description");
         defDesc.classList.remove("hide-description");
-        defDesc.style.opacity = "1";
+        setTimeout((function() {
+          defDesc.style.opacity = "1";
+        }), 50);
       }
 
       else {
@@ -55,8 +56,7 @@
             break;
         }
 
-        let others = document.getElementsByClassName("foto-especialidad");
-        [...others].forEach((other) => {
+        [...imgs].forEach((other) => {
           if (other != this) {
             other.style.opacity = "0";
           }
@@ -64,10 +64,16 @@
         
         // Description
         const descId = this.dataset.description;
-        let desc = document.getElementById(descId);
+        const desc = document.getElementById(descId);
         desc.classList.remove("hide-description");
-        desc.style.opacity = "1";
-        let defDesc = document.getElementById("default-description");
+
+        if (!desc.style.opacity) 
+          desc.style.opacity = "0";
+
+        setTimeout((function() {
+          desc.style.opacity = "1";
+        }), 50);
+
         defDesc.classList.add("hide-description");
         defDesc.style.opacity = "0";
       }
