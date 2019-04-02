@@ -11,7 +11,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([19.704284,-101.1961674]).addTo(map);
-L.marker([19.6956704,-101.1767561]).addTo(map);
-L.marker([19.7075915,-101.195379]).addTo(map);
+const svMarker = L.icon({
+  iconUrl: 'assets/images/map_marker.png',
+  shadowUrl: 'assets/images/map_marker_shadow.png',
+
+  iconSize:     [64, 62],
+  shadowSize:   [87, 43],
+  iconAnchor:   [31, 64],
+  shadowAnchor: [14, 46],
+  popupAnchor:  [-3, -76]
+});
+
+L.marker([19.704284,-101.1961674], {icon: svMarker}).addTo(map);
+L.marker([19.6956704,-101.1767561], {icon: svMarker}).addTo(map);
+L.marker([19.7075915,-101.195379], {icon: svMarker}).addTo(map);
 
