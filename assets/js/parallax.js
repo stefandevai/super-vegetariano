@@ -11,3 +11,5 @@ let applyParallax = (function(eids, strength) {
     });
   });
 });
+
+applyParallax(['hero-bg', 'hero-arrow'], 0.1);

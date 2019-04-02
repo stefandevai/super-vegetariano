@@ -145,3 +145,4 @@ class StickyNavbar {
   }
 }
 
+let navHome = new StickyNavbar(73);
