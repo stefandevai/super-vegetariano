@@ -15,10 +15,10 @@ const svMarker = L.icon({
   iconUrl: 'assets/images/map_marker.png',
   shadowUrl: 'assets/images/map_marker_shadow.png',
 
-  iconSize:     [64, 62],
-  shadowSize:   [87, 43],
-  iconAnchor:   [31, 64],
-  shadowAnchor: [14, 46],
+  iconSize:     [44, 43],
+  shadowSize:   [56, 28],
+  iconAnchor:   [22, 43],
+  shadowAnchor: [9, 28],
   popupAnchor:  [-3, -76]
 });
 

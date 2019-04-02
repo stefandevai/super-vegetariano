@@ -3,16 +3,37 @@ section.block-donde
   background-repeat: no-repeat
   background-position: left bottom
 
+  a
+    font-weight: normal
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+    &:hover li
+      background-color: $ultra-light
+
+  p
+    transition: all .9s
+
+
   ul
     list-style: none
+
+    a:last-child > li
+      border-bottom: 3px solid $lighter
+
+    a:first-child > li
+      border-top: 3px solid $lighter
 
     li
       display: flex
       justify-content: flex-end
+      position: relative
+      border-top: 1px dashed $lighter
 
       img
         margin-left: $pixel-unit*2
+        margin-right: $pixel-unit*2
 
   div.map
     z-index: 1
-    //background-color: $primary
