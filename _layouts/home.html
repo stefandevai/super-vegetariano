@@ -4,18 +4,26 @@
   {% include head.html %}
 
   <body>
-    {% include navbar.html %}
-    {% include home/hero.html %}
+    <div id="preloader-wrapper">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+    <div id="load-content-wrapper">
+      {% include navbar.html %}
+      {% include home/hero.html %}
 
-    <main class="sv-main" aria-label="Content">
-      {% include home/historia.html %}
-      {% include home/especialidades.html %}
-      {% include home/donde.html %}
-    </main>
+      <main class="sv-main" aria-label="Content">
+        {% include home/historia.html %}
+        {% include home/especialidades.html %}
+        {% include home/donde.html %}
+      </main>
 
-    {% include home/contacto.html %}
-    {% include footer.html %}
-    {% include home/scripts.html %}
+      {% include home/contacto.html %}
+      {% include footer.html %}
+      {% include home/scripts.html %}
+    </div>
   </body>
 
 </html>

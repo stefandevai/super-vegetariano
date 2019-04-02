@@ -1,12 +1,9 @@
 <script>
 // Page load transition
-console.log("Not Loaded");
-document.body.style.opacity = "0";
-document.body.style.transition = "all .9s";
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    console.log("Loaded");
-    document.body.style.opacity = "1";
+    document.getElementById("load-content-wrapper").style.opacity = "1";
+    document.getElementById("preloader-wrapper").style.opacity = "0";
   }
 };
 </script>
