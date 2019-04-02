@@ -20,7 +20,6 @@
 
   function initMap() {
     map = L.map('map', {
-      //center: [19.7036651,-101.1867948],
       center: [19.7069009,-101.1893867],
       zoom: 13.5,
       attributionControl: false,
@@ -48,7 +47,10 @@
     [...anchors].forEach((anchor) => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        popups[this.dataset.popup].togglePopup();
+        const marker = popups[this.dataset.popup];
+        const latLngs = [marker.getLatLng()];
+        map.setView(latLngs[0], 16);
+        marker.togglePopup();
       }, false);
     });
 
