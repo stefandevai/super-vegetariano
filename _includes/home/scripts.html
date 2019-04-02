@@ -1,3 +1,16 @@
+<script>
+// Page load transition
+console.log("Not Loaded");
+document.body.style.opacity = "0";
+document.body.style.transition = "all .9s";
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    console.log("Loaded");
+    document.body.style.opacity = "1";
+  }
+};
+</script>
+
 <script src="assets/js/StickyNavbar.js"></script>
 <script src="assets/js/parallax.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
