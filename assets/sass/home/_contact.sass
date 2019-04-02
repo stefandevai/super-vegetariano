@@ -207,3 +207,17 @@ section.contact
     background-position: $pixel-unit*2 $pixel-unit
     min-height: 3rem
     height: 100%
+#notification
+  //display: none
+  opacity: 0
+  -webkit-transition: all .3s
+  transition: all .3s
+
+  &.success
+    background-color: $brand-light
+    //display: block
+    opacity: 1
+  &.failure
+    background-color: $warning
+    //display: block
+    opacity: 1
