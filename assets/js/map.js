@@ -46,6 +46,14 @@
   function addressLinks() {
     [...anchors].forEach((anchor) => {
       anchor.addEventListener('click', function(e) {
+        if (this.classList.contains("active")) this.classList.remove("active");
+        else {
+          this.classList.add("active");
+          [...anchors].forEach(((a) => {
+            if (a != this && a.classList.contains("active")) a.classList.remove("active");
+          }).bind(this));
+        }
+
         e.preventDefault();
         const marker = popups[this.dataset.popup];
         const latLngs = [marker.getLatLng()];
