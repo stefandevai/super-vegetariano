@@ -55,21 +55,20 @@ section.contact
 
   h2
     color: $white
-    margin-bottom: $pixel-unit*2
-    margin-top: $pixel-unit*3
+    margin: 2.5rem auto
+    //margin-top: 6rem
 
   form
     z-index: 0
     min-height: 300px
-    height: 70vh
-    width: 70%
+    //height: 70vh
+    width: $form-width
     margin: 0 auto
     display: grid
-    grid-template-columns: 40px 1fr 1fr 40px
-    grid-template-rows: 80px 4fr 100px
-    grid-column-gap: $pixel-unit
-    grid-row-gap: $pixel-unit
-    grid-template-areas: ". n e ." ". m m ." ". b b ."
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 80px 250px 80px
+    grid-gap: $pixel-unit
+    grid-template-areas: "n e" "m m" "b b"
 
     .name-input,.email-input,.message-input
       padding: 0
@@ -207,17 +206,29 @@ section.contact
     background-position: $pixel-unit*2 $pixel-unit
     min-height: 3rem
     height: 100%
+
 #notification
-  //display: none
   opacity: 0
   -webkit-transition: all .3s
   transition: all .3s
+  height: 0
+  width: $form-width
+  margin: 0 auto
+  color: $white
+  font-weight: bold
+  border-radius: 10px
+  display: flex
+  align-items: center
+  justify-content: center
 
   &.success
-    background-color: $brand-light
-    //display: block
+    background-color: $brand
     opacity: 1
+    margin-bottom: $pixel-unit
+    height: 3rem
+
   &.failure
     background-color: $warning
-    //display: block
     opacity: 1
+    margin-bottom: $pixel-unit
+    height: 3rem

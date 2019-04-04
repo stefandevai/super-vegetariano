@@ -4,8 +4,7 @@
   const mail = document.getElementById('email-input');
   const msg = document.getElementById('message-input');
 
-  //const url = 'https://clumsy-guineafowl.dev.with-datafire.io/contact';
-  const url = 'https://f8fo8drpy3.execute-api.us-west-1.amazonaws.com/beta';
+  const url = 'https://cmng71if45.execute-api.us-west-2.amazonaws.com/beta';
   let params = '';
   let xhr = new XMLHttpRequest();
 
@@ -13,12 +12,11 @@
     if (xhr.readyState == 4 && xhr.status == 200) {
       notificationEl.classList.add('success');
       notificationEl.innerHTML = '¡Gracias! Tu mensaje ha sido enviado.';
-      cleanForm();
+      clearForm();
     }
     else if (xhr.readyState == 4){
       notificationEl.classList.add('failure');
       notificationEl.innerHTML = 'Error ' + xhr.status;
-      //xhr = new XMLHttpRequest();
     }
   }
 
@@ -28,19 +26,31 @@
     msg.value = '';
   }
 
+  function validateInputs() {
+    nam.checkValidity();
+    mail.checkValidity();
+    msg.checkValidity();
+
+    return nam.reportValidity() && mail.reportValidity() && msg.reportValidity();
+  }
+
   function getParams() {
-    return 'name=' + nam.value + '&emailAddress=' + mail.value + '&message=' + msg.value;
+    return {
+      name: nam.value,
+      email: mail.value,
+      message: msg.value,
+    };
   }
 
   document.getElementById('submit-button').addEventListener('click', (e) => {
-    //if (xhr.readyState == 4) xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
     e.preventDefault();
-    //let params = getParams();
-    //console.log(params);
-    xhr.send(params);
+
+    if (validateInputs()) {
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      let data = getParams();
+      xhr.send(JSON.stringify(data));
+    }
   }, false);
 
 })();
