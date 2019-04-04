@@ -4,7 +4,8 @@
   const mail = document.getElementById('email-input');
   const msg = document.getElementById('message-input');
 
-  const url = 'https://clumsy-guineafowl.dev.with-datafire.io/contact';
+  //const url = 'https://clumsy-guineafowl.dev.with-datafire.io/contact';
+  const url = 'https://f8fo8drpy3.execute-api.us-west-1.amazonaws.com/beta';
   let params = '';
   let xhr = new XMLHttpRequest();
 
@@ -21,7 +22,7 @@
     }
   }
 
-  function cleanForm() {
+  function clearForm() {
     nam.value = '';
     mail.value = '';
     msg.value = '';
@@ -32,13 +33,13 @@
   }
 
   document.getElementById('submit-button').addEventListener('click', (e) => {
-    if (xhr.readyState == 4) xhr = new XMLHttpRequest();
+    //if (xhr.readyState == 4) xhr = new XMLHttpRequest();
     xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type', 'application/json');
 
     e.preventDefault();
-    let params = getParams();
-    console.log(params);
+    //let params = getParams();
+    //console.log(params);
     xhr.send(params);
   }, false);
 
