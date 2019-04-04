@@ -35,7 +35,7 @@
   document.getElementById('submit-button').addEventListener('click', (e) => {
     //if (xhr.readyState == 4) xhr = new XMLHttpRequest();
     xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     e.preventDefault();
     //let params = getParams();
