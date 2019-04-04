@@ -1,3 +1,9 @@
+grecaptcha.ready(function() {
+  grecaptcha.execute('6LcQJ5wUAAAAAKSipV57SjbJwfkyxg7uLyNYOq_S', {action: 'homepage'}).then(function(token) {
+    console.log('here');
+  });
+});
+
 (function() {
   const notificationEl = document.getElementById('notification');
   const nam = document.getElementById('name-input');
