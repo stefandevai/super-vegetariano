@@ -1,9 +1,3 @@
-grecaptcha.ready(function() {
-  grecaptcha.execute('6LcQJ5wUAAAAAKSipV57SjbJwfkyxg7uLyNYOq_S', {action: 'homepage'}).then(function(token) {
-    console.log('here');
-  });
-});
-
 (function() {
   const notificationEl = document.getElementById('notification');
   const nam = document.getElementById('name-input');
@@ -19,6 +13,11 @@ grecaptcha.ready(function() {
       notificationEl.classList.add('success');
       notificationEl.innerHTML = '¡Gracias! Tu mensaje ha sido enviado.';
       clearForm();
+
+      setTimeout(() => {
+        notificationEl.style.opacity = "0";
+        notificationEl.style.height = "0";
+      }, 3000);
     }
     else if (xhr.readyState == 4){
       notificationEl.classList.add('failure');
@@ -50,7 +49,6 @@ grecaptcha.ready(function() {
 
   document.getElementById('submit-button').addEventListener('click', (e) => {
     e.preventDefault();
-
     if (validateInputs()) {
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
