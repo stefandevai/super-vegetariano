@@ -10,10 +10,6 @@ section.block-especialidades
     grid-column-gap: $rem-unit
     grid-row-gap: $rem-unit
 
-  .primary
-    -webkit-transform: scale(2)
-    transform: scale(2)
-
   img
     height: 100%
     width: auto
@@ -25,20 +21,20 @@ section.block-especialidades
     transition: all .3s
 
     img
+      will-change: transform
       width: 100%
       height: 100%
       object-fit: cover
       transition: all .4s
 
     &:hover:not(.primary) img
-      -webkit-filter: brightness(30%)
-      filter: brightness(30%)
       transform: scale(1.1)
 
     &:hover:not(.primary) div.title-wrapper
       opacity: 1
 
     div.title-wrapper
+      will-change: opacity
       width: 100%
       height: 100%
       display: flex
@@ -61,6 +57,7 @@ section.block-especialidades
     display: none
 
   .section-text > div
+    will-change: opacity
     -webkit-transition: opacity .4s
     transition: opacity .4s
 
