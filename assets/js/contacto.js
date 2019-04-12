@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
   const notificationEl = document.getElementById('notification');
   const nam = document.getElementById('name-input');

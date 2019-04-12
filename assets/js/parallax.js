@@ -1,3 +1,5 @@
+"use strict";
+
 let applyParallax = (function(eids, strength) {
   let scrollPos = 0;
   window.addEventListener('scroll', (e) => {
@@ -13,3 +15,7 @@ let applyParallax = (function(eids, strength) {
 });
 
 applyParallax(['hero-bg', 'hero-arrow'], 0.1);
+
+const lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy",
+});
