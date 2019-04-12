@@ -4,13 +4,13 @@
   {% include head.html %}
 
   <body>
-    <div id="preloader-wrapper">
-      <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-      </div>
-    </div>
-    <div id="load-content-wrapper">
+    {% comment %}<div id="preloader-wrapper">{% endcomment %}
+      {% comment %}<div class="spinner">{% endcomment %}
+        {% comment %}<div class="double-bounce1"></div>{% endcomment %}
+        {% comment %}<div class="double-bounce2"></div>{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+    {% comment %}<div id="load-content-wrapper">{% endcomment %}
       {% include navbar.html %}
       {% include home/hero.html %}
 
@@ -23,7 +23,7 @@
       {% include home/contacto.html %}
       {% include footer.html %}
       {% include home/scripts.html %}
-    </div>
+    {% comment %}</div>{% endcomment %}
     {% comment %}<div class="g-recaptcha" data-sitekey="6LcQJ5wUAAAAAKSipV57SjbJwfkyxg7uLyNYOq_S"></div>{% endcomment %}
   </body>
 
