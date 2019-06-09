@@ -33,6 +33,40 @@ section.block-especialidades
     height: 100%
     width: auto
 
+  +mobile
+    p.desc-mobile
+      display: block
+    div.foto-especialidad.primary
+      img
+        -webkit-filter: brightness(30%)
+        filter: brightness(30%)
+
+      div.title-wrapper
+        will-change: opacity
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        opacity: 1
+        position: absolute
+        z-index: 2
+        transition: opacity .3s
+        p
+          color: $white
+          font-size: 0.6rem
+          margin-left: 15%
+          margin-right: 15%
+        h3
+          opacity: 1
+          font-size: 0.9rem
+          margin-left: 15%
+          margin-right: 15%
+          letter-spacing: 4px
+          line-height: 1.3
+          color: $white
   div.foto-especialidad
     cursor: pointer
     position: relative
@@ -46,13 +80,16 @@ section.block-especialidades
       object-fit: cover
       transition: all .4s
 
-    &:hover:not(.primary) img
-      -webkit-filter: brightness(30%)
-      filter: brightness(30%)
-      transform: scale(1.1)
+    +tablet
+      p.desc-mobile
+        display: none
+      &:hover:not(.primary) img
+        -webkit-filter: brightness(30%)
+        filter: brightness(30%)
+        transform: scale(1.1)
 
-    &:hover:not(.primary) div.title-wrapper
-      opacity: 1
+      &:hover:not(.primary) div.title-wrapper
+        opacity: 1
 
     div.title-wrapper
       will-change: opacity
@@ -67,12 +104,15 @@ section.block-especialidades
       z-index: 2
       transition: opacity .3s
       h3
+        opacity: 1
         font-size: 1.5rem
         margin-left: 15%
         margin-right: 15%
         letter-spacing: 4px
         line-height: 1.8
         color: white
+        +mobile
+          opacity: 0
 
   .hide-description
     display: none
