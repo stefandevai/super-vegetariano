@@ -57,15 +57,33 @@ nav.top-menu,nav.fixed-menu
           color: $brand
 
 nav.top-menu
-  top: $pixel-unit*2
-  width: 90%
-  overflow: hidden
+  +tablet
+    top: $pixel-unit*2
+    width: 90%
+
+  +mobile
+    top: 0
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    align-items: flex-start
 
   img
     width: 70px
     height: 70px
 
+    +mobile
+      width: 60px
+      height: 60px
+      margin-left: 40px
+      margin-top: 10px
+
+  #menu-toggle
+    top: 25px
+    right: 50px
+
 nav.fixed-menu
+  top: -73px
   opacity: 0
   padding-left: $pixel-unit*2
   padding-right: $pixel-unit*2
