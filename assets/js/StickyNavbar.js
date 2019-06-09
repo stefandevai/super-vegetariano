@@ -92,6 +92,17 @@ class StickyNavbar {
 
   _scrollFromClick(clickable) {
     const eid = document.getElementById(clickable.dataset.target);
+
+    // Remove mobile menu sidebar
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+      const checkboxes = document.getElementsByClassName('check-input-menu');
+      for (var i in checkboxes) {
+        if (checkboxes[i].tagName === 'INPUT') {
+          checkboxes[i].checked = false;
+        }
+      }
+    }
+
     this.scrollToElement(eid);
   }
 
