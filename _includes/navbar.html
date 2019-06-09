@@ -1,3 +1,12 @@
+<nav class="top-menu" role="navigation">
+  <img class="lazy" data-src="assets/images/svg/logo-compressed.svg" alt="Super Vegetariano reduced logo">
+  <ul class="desktop-menu">
+    <li data-target="historia" class="nav-item" >Historia</li>
+    <li data-target="especialidades" class="nav-item" >Especialidades</li>
+    <li data-target="donde" class="nav-item" >¿Dónde?</li>
+    <li data-target="contacto" class="nav-item" >Contacto</li>
+  </ul>
+
   <div id="menu-toggle">
     <input type="checkbox">
 
@@ -12,24 +21,30 @@
       <li data-target="contacto" class="nav-item" >Contacto</li>
     </ul>
   </div>
-
-<nav class="top-menu" role="navigation">
-  <img class="lazy" data-src="assets/images/svg/logo-compressed.svg" alt="Super Vegetariano reduced logo">
-  <ul>
-    <li data-target="historia" class="nav-item" >Historia</li>
-    <li data-target="especialidades" class="nav-item" >Especialidades</li>
-    <li data-target="donde" class="nav-item" >¿Dónde?</li>
-    <li data-target="contacto" class="nav-item" >Contacto</li>
-  </ul>
 </nav>
 
 <nav id="sticky-navbar" class="fixed-menu" role="navigation">
   <img src="assets/images/svg/logo.svg" alt="Super Vegetariano reduced logo" onclick="navHome.scrollToY(0)">
-  <ul>
+  <ul class="desktop-menu">
     <li data-target="historia" class="nav-item" >Historia</li>
     <li data-target="especialidades" class="nav-item" >Especialidades</li>
     <li data-target="donde" class="nav-item" >¿Dónde?</li>
     <li data-target="contacto" class="nav-item" >Contacto</li>
   </ul>
+
+  <div id="menu-toggle">
+    <input type="checkbox">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="hidden-menu">
+      <li data-target="historia" class="nav-item" >Historia</li>
+      <li data-target="especialidades" class="nav-item" >Especialidades</li>
+      <li data-target="donde" class="nav-item" >¿Dónde?</li>
+      <li data-target="contacto" class="nav-item" >Contacto</li>
+    </ul>
+  </div>
 </nav>
 
