@@ -1,9 +1,26 @@
+.remove-mobile
+  +mobile
+    display: none
+  +tablet
+    display: block
+  +desktop
+    display: block
+
+.add-mobile
+  +mobile
+    display: block
+  +tablet
+    display: none
+  +desktop
+    display: none
+
 html,body
   font-family: $font-primary
   font-display: swap
 
 body
-  border: solid 0.8rem $white 
+  +tablet
+    border: solid 0.8rem $white 
   scroll-behavior: smooth
 
 h1,h2
@@ -32,6 +49,10 @@ a
 
 span.dash
   color: $lighter
+  +mobile
+    display: none
+  +tablet
+    display: inline-block
 
 #preloader-wrapper
   position: fixed

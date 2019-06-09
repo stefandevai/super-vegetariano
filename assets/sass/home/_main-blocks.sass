@@ -1,7 +1,11 @@
 section.block-main
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr
   grid-template-rows: minmax(300px, calc(100vh - #{$navbar-height}))
+
+  +tablet
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: minmax(300px, calc(100vh - #{$navbar-height}))
 
   overflow: hidden
 
@@ -15,16 +19,25 @@ section.block-main
     margin-top: $pixel-unit*4
 
   &:last-child
-    margin-bottom: $pixel-unit*10
+    +mobile
+      margin-bottom: $pixel-unit*4
+    +tablet
+      margin-bottom: $pixel-unit*10
 
   &.block-left
-    text-align: right
+    text-align: left
+    +tablet
+      text-align: right
 
   &.block-right
     text-align: left
+    +tablet
+      text-align: left
 
   .section-text
-    margin: auto 6rem
+    margin: auto 3rem 
+    +tablet
+      margin: auto 6rem
 
   .top-pattern
     float: left

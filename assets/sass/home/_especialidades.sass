@@ -1,14 +1,33 @@
 section.block-especialidades
-  display: grid
-  grid-template-columns: repeat(2, 1fr)
+  +mobile
+    display: flex
+    flex-direction: column-reverse
+
+  +tablet
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
 
   div.image-mosaic
     overflow: hidden
     display: grid
-    grid-template-columns: repeat(2, 1fr)
-    grid-template-rows: repeat(2, calc((100vh - #{$navbar-height})/2))
-    grid-column-gap: $rem-unit
-    grid-row-gap: $rem-unit
+    height: 100vw
+
+    +mobile
+      grid-template-columns: repeat(2, 1fr)
+      grid-auto-rows: 1fr
+      grid-column-gap: $rem-unit/4
+      grid-row-gap: $rem-unit/4
+      margin-top: $pixel-unit*2
+      
+    +tablet
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(2, calc((100vh - #{$navbar-height})/2))
+      grid-column-gap: $rem-unit
+      grid-row-gap: $rem-unit
+
+  .primary
+    -webkit-transform: scale(2.0)
+    transform: scale(2.0)
 
   img
     height: 100%
@@ -28,6 +47,8 @@ section.block-especialidades
       transition: all .4s
 
     &:hover:not(.primary) img
+      -webkit-filter: brightness(30%)
+      filter: brightness(30%)
       transform: scale(1.1)
 
     &:hover:not(.primary) div.title-wrapper

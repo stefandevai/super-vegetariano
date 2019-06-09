@@ -8,7 +8,8 @@ nav.top-menu,nav.fixed-menu
   align-items: center
   justify-content: space-between
   z-index: 5
-
+  ul
+    display: none
   img
     -webkit-transition: transform .5s
     transition: transform .5s
@@ -17,22 +18,43 @@ nav.top-menu,nav.fixed-menu
     &:hover
       -webkit-transform: scale(1.1)
       transform: scale(1.1)
+    
+  +desktop
+    left: 0
+    right: 0
+    margin: 0 auto
+    position: absolute
 
-  ul
-    list-style: none
-    text-transform: uppercase
-    font-size: $font-size-footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 5
 
-    li
-      display: inline
-      margin-left: $pixel-unit*2
-      color: $white
+    img
+      -webkit-transition: transform .5s
+      transition: transform .5s
       cursor: pointer
-      -webkit-transition: color .2s
-      transition: color .2s
 
       &:hover
-        color: $brand
+        -webkit-transform: scale(1.1)
+        transform: scale(1.1)
+
+    ul
+      display: block
+      list-style: none
+      text-transform: uppercase
+      font-size: $font-size-footer
+
+      li
+        display: inline
+        margin-left: $pixel-unit*2
+        color: $white
+        cursor: pointer
+        -webkit-transition: color .2s
+        transition: color .2s
+
+        &:hover
+          color: $brand
 
 nav.top-menu
   top: $pixel-unit*2
@@ -49,9 +71,11 @@ nav.fixed-menu
   background-color: $black
   height: $pixel-unit*4
   position: fixed
-  border-top: $rem-unit solid $white
-  border-left: $rem-unit solid $white
-  border-right: $rem-unit solid $white
+
+  +tablet
+    border-top: $rem-unit solid $white
+    border-left: $rem-unit solid $white
+    border-right: $rem-unit solid $white
   top: calc(-$pixel-unit*4 - $rem-unit)
   transition: top .3s
 

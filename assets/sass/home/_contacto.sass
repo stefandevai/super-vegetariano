@@ -15,9 +15,9 @@ div.triangle-shadow::before
   content: ''
   position: absolute
   width: 100px
-  height: 100px
+  height: 55px
   background-color: $white
-  top: -130px
+  top: -85px
   left: -50px
   right: 0
   margin: 0 auto
@@ -45,7 +45,7 @@ section.contact
   -moz-box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
   box-shadow: inset 0px 7px 22px -7px rgba(0,0,0,0.45)
 
-  min-height: 500px
+  min-height: 680px
   height: 100vh
   text-align: center
 
@@ -55,20 +55,28 @@ section.contact
 
   h2
     color: $white
-    margin: 2.5rem auto
-    //margin-top: 6rem
+
+    +mobile
+      margin: 1rem auto
+    +tablet
+      margin: 2.5rem auto
 
   form
     z-index: 0
     min-height: 300px
-    //height: 70vh
-    width: $form-width
     margin: 0 auto
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-template-rows: 80px 250px 80px
-    grid-gap: $pixel-unit
-    grid-template-areas: "n e" "m m" "b b"
+    +mobile
+      display: block
+      width: 90vw
+      *:not(:first-child)
+        margin-top: $pixel-unit*1.5
+    +tablet
+      width: $form-width
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: 80px 250px 80px
+      grid-gap: $pixel-unit
+      grid-template-areas: "n e" "m m" "b b"
 
     .name-input,.email-input,.message-input
       padding: 0
@@ -176,9 +184,6 @@ section.contact
     align-self: center
     border: none
     border-radius: 5px
-    width: $pixel-unit*12
-    background-color: transparent
-    color: $brand-light
     border: 5px solid $brand-light
     cursor: pointer
     font-weight: bold
@@ -186,6 +191,12 @@ section.contact
     letter-spacing: 1px
     text-align: center
     transition: all .2s
+    color: $brand-light
+    background-color: transparent
+    width: $pixel-unit*12
+
+    +mobile
+      width: 100%
 
     &:hover
       background-color: $brand-light
@@ -205,7 +216,7 @@ section.contact
     resize: none
     padding: $pixel-unit $pixel-unit*2
     background-position: $pixel-unit*2 $pixel-unit
-    min-height: 3rem
+    min-height: 150px
     height: 100%
 
 #notification

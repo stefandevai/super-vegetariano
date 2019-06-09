@@ -1,8 +1,30 @@
 <section id="top" class="hero">
-  <div id="hero-bg" class="hero-bg lazy" data-bg="url(assets/images/bg-hero.webp)">
+  <div id="hero-bg" class="hero-bg">
+    <!--<div>-->
+      <!--<picture>-->
+        <!--<source type="image/jpg" media="(max-width: 585px)" data-srcset="assets/images/hero-585w.jpg">-->
+        <!--<source type="image/jpg" media="(min-width: 586px) and (max-width: 848px)" data-srcset="assets/images/hero-848w.jpg">-->
+        <!--<source type="image/jpg" media="(min-width: 849px)" data-srcset="assets/images/hero-1600w.jpg">-->
+        <!--<source type="image/jpg" media="(min-width: 1601px)" data-srcset="assets/images/hero-2236w.jpg">-->
+
+        <!--<img id="hero-bg" class="lazy" data-src="assets/images/hero-1600w.jpg" alt="Tabla de cortar con varias verduras">-->
+      <!--</picture>-->
+    <!--</div>-->
+  </div>
+  <!--<div id="hero-bg" class="hero-bg lazy" data-src="assets/images/bg-hero.webp">-->
   </div>
   <div id="hero-wrapper" class="hero-wrapper">
-    <img class="lazy" data-src="assets/images/logo-completo.webp" alt="Logo completo Super Vegetariano">
+    <picture>
+      <source type="image/webp" media="(max-width: 586px)" data-srcset="assets/images/logo-completo-300w.webp">
+      <source type="image/webp" media="(min-width: 586px) and (max-width: 848px)" data-srcset="assets/images/logo-completo-500w.webp">
+      <source type="image/webp" media="(min-width: 849px)" data-srcset="assets/images/logo-completo-724w.webp">
+
+      <source type="image/png" media="(max-width: 586px)" data-srcset="assets/images/logo-completo-300w.png">
+      <source type="image/png" media="(min-width: 586px) and (max-width: 848px)" data-srcset="assets/images/logo-completo-500w.png">
+      <source type="image/png" media="(min-width: 849px)" data-srcset="assets/images/logo-completo-724w.png">
+
+      <img class="lazy logo-completo" data-src="assets/images/logo-completo-724w.png" alt="Logo del restaurán Super Vegetariano">
+    </picture>
     <div id="hero-arrow">
       <svg onclick="navHome.scrollToId('historia')" width="54" height="44" viewBox="0 0 54 33" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 3L15 16L27 29L39 16L51 3" stroke="#D0D0D0" stroke-width="5" stroke-linecap="round"/>

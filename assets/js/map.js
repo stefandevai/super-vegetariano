@@ -38,9 +38,9 @@
     //popups['centro'].bindPopup("<a href='https://goo.gl/maps/ew1ZkJfavMt' target='_blank'><b>Ver en Google Maps</b></a><h3>Calle Valentín Gomez Farias 151,<br>Centro Histórico,<br>Morelia, Michoacán.<br></h3>");
     //popups['mariano'].bindPopup("<h3>SUPER VEGETARIANO</h3><br>Calle General Mariano Monterde 247<br>Colonia Chapultepec Norte<br>Morelia, Michoacán.<br><a href='https://goo.gl/maps/KWoWyg3kha32' target='_blank'><b>Mapa</b></a>");
     //popups['valentin'].bindPopup("<h3>SUPER VEGETARIANO</h3><br>Calle Valentín Gomez Farias 115<br>Colonia Industrial<br>Morelia, Michoacán.<br><a href='https://goo.gl/maps/bq8tcUtAcyC2' target='_blank'><b>Mapa</b></a>");
-    popups['centro'].bindPopup("<h3>Super Vegetariano - Centro</h3><div><img src='assets/images/restauran_centro.jpg'><div><a href='https://goo.gl/maps/ew1ZkJfavMt' target='_blank'>Ver en Google Maps</a>");
-    popups['mariano'].bindPopup("<h3>Super Vegetariano - Mariano</h3><div><img src='assets/images/restauran_centro.jpg'><div><a href='https://goo.gl/maps/KWoWyg3kha32' target='_blank'>Ver en Google Maps</a>");
-    popups['valentin'].bindPopup("<h3>Super Vegetariano - Valentín</h3><div><img src='assets/images/restauran_centro.jpg'><div><a href='https://goo.gl/maps/bq8tcUtAcyC2' target='_blank'>Ver en Google Maps</a>");
+    popups['centro'].bindPopup("<h3>Super Vegetariano - Centro</h3><div><img src='assets/images/rest.jpg'><div><a href='https://goo.gl/maps/ew1ZkJfavMt' target='_blank'>Ver en Google Maps</a>");
+    popups['mariano'].bindPopup("<h3>Super Vegetariano - Mariano</h3><div><img src='assets/images/rest.jpg'><div><a href='https://goo.gl/maps/KWoWyg3kha32' target='_blank'>Ver en Google Maps</a>");
+    popups['valentin'].bindPopup("<h3>Super Vegetariano - Valentín</h3><div><img src='assets/images/rest.jpg'><div><a href='https://goo.gl/maps/bq8tcUtAcyC2' target='_blank'>Ver en Google Maps</a>");
   }
 
   function addressLinks() {

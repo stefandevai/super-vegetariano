@@ -1,24 +1,45 @@
 section.hero
-  min-height: 700px
-  height: 110vh
+  min-height: 400px
+  height: 90vh
+  +tablet
+    min-height: 500px
+    height: 100vh
+  +desktop
+    min-height: 700px
+    height: 110vh
   position: relative
 
   .hero-bg
-    position: absolute
-    //background: url('../images/hero_bg_lighter-compressed.jpg')
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: 0% 100%
-    min-width: 100%
-    height: 100%
     z-index: -3
-    padding: 0
+    position: absolute
+    background-image: url('../images/hero-1600w.png')
+    background-repeat: no-repeat
+    //background-size: cover
+    background-position: center 100%
+    width: 100%
+    height: 100%
+
+    //img
+      //width: 100%
+      //width: auto
+
+  //.hero-bg
+    //position: absolute
+    //overflow: hidden
+    //background: url('../images/hero_bg_lighter-compressed.jpg')
+    //background-repeat: no-repeat
+    //background-size: cover
+    //background-position: 0% 100%
+    //width: 100vw
+    //height: 100%
+    //z-index: -3
+    //padding: 0
 
   .hero-wrapper
     position: relative
     text-align: center
 
-  img
+  img.logo-completo
     position: absolute
     top: 35vh
     margin: 0 auto
@@ -27,7 +48,11 @@ section.hero
 
   div#hero-arrow
     position: absolute
-    top: 75vh
+    top: 88vh
+    +tablet
+      top: 70vh
+    +desktop
+      top: 75vh
     left: 0
     right: 0
 

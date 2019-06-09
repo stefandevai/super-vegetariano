@@ -3,6 +3,14 @@ section.block-donde
   background-repeat: no-repeat
   background-position: left bottom
 
+  +mobile
+    display: flex
+    flex-direction: column
+    margin-top: $pixel-unit*2
+    padding-bottom: $pixel-unit*4
+  +tablet
+    display: grid
+
   .section-text a
     font-weight: normal
     text-decoration: none
@@ -20,6 +28,9 @@ section.block-donde
 
   ul
     list-style: none
+
+    +mobile
+      padding: 0
 
     a:last-child > li
       border-bottom: 3px solid $lighter
@@ -39,6 +50,10 @@ section.block-donde
 
   div.map
     z-index: 1
+
+    +mobile
+      height: 50vh
+      margin-top: $pixel-unit*2
 
     .leaflet-popup-content
       > div

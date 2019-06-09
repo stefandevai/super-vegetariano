@@ -4,27 +4,18 @@
   {% include head.html %}
 
   <body>
-    {% comment %}<div id="preloader-wrapper">{% endcomment %}
-      {% comment %}<div class="spinner">{% endcomment %}
-        {% comment %}<div class="double-bounce1"></div>{% endcomment %}
-        {% comment %}<div class="double-bounce2"></div>{% endcomment %}
-      {% comment %}</div>{% endcomment %}
-    {% comment %}</div>{% endcomment %}
-    {% comment %}<div id="load-content-wrapper">{% endcomment %}
-      {% include navbar.html %}
-      {% include home/hero.html %}
+    {% include navbar.html %}
+    {% include home/hero.html %}
 
-      <main class="sv-main" aria-label="Content">
-        {% include home/historia.html %}
-        {% include home/especialidades.html %}
-        {% include home/donde.html %}
-      </main>
+    <main class="sv-main" aria-label="Content">
+      {% include home/historia.html %}
+      {% include home/especialidades.html %}
+      {% include home/donde.html %}
+    </main>
 
-      {% include home/contacto.html %}
-      {% include footer.html %}
-      {% include home/scripts.html %}
-    {% comment %}</div>{% endcomment %}
-    {% comment %}<div class="g-recaptcha" data-sitekey="6LcQJ5wUAAAAAKSipV57SjbJwfkyxg7uLyNYOq_S"></div>{% endcomment %}
+    {% include home/contacto.html %}
+    {% include footer.html %}
+    {% include home/scripts.html %}
   </body>
 
 </html>
