@@ -54,6 +54,37 @@ span.dash
   +tablet
     display: inline-block
 
+input[type="submit"]
+  height: 3rem
+  justify-self: center
+  align-self: center
+  border: none
+  border-radius: 5px
+  border: 5px solid $brand
+  cursor: pointer
+  font-weight: bold
+  text-transform: uppercase
+  letter-spacing: 1px
+  text-align: center
+  transition: all .2s
+  color: $brand
+  background-color: transparent
+  width: $pixel-unit*12
+
+  +mobile
+    width: 100%
+
+  &:hover
+    background-color: $brand
+    color: $dark
+
+  &:active
+    background-color: $brand-dark
+    border-color: $brand-dark
+
+  &:focus
+    outline: none
+
 #preloader-wrapper
   position: fixed
   text-align: center

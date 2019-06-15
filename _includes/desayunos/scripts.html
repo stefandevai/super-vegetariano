@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.6/dist/lazyload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    lazy: true,
+    loop: true,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  const lazyLoadInstance = new LazyLoad({
+      elements_selector: ".lazy",
+  });
+</script>
+
+{% include google-analytics-tag.html %}
+
+
